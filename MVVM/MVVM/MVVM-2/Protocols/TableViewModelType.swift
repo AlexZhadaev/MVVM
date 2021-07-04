@@ -7,7 +7,11 @@
 
 import Foundation
 
-protocol TableViewModelType {
-    var numberOfRows: Int { get }
-    var profiles: [Profile2] { get }
+protocol TableViewViewModelType {
+    
+    func numberOfRows() -> Int
+    func cellViewModel(forIndexPath indexPath: IndexPath) -> TableViewCellViewModelType?
+    
+    func viewModelForSelectedRow() -> DetailViewModelType?
+    func selectRow(atIndexPath indexPath: IndexPath)
 }
